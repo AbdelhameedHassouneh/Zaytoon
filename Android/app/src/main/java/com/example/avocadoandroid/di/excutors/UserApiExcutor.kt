@@ -39,21 +39,9 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-
             }
-
         })
-//        try {
-//            val response = call.execute()
-//            val user1:User? = response.body()
-//            if(user1!=null){
-//                Log.d("WWWW", "onResponse: $user1")
-//                user = user1
-//            }
-//        } catch (e: IOException) {
-//            Log.d("WWWW", "On failure ")
-//        }
-//
+
         return user
     }
 }
