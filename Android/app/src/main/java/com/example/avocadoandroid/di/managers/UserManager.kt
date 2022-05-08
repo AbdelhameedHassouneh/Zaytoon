@@ -8,7 +8,9 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
 
 
     fun login(user:User): User?{
-        return excutor.login(user)
+        return excutor.login(user, object: ApiCallback<User> {
+
+        })
     }
 
 }

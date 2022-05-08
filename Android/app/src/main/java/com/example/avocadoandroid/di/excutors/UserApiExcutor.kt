@@ -20,7 +20,7 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
     val gson = GsonBuilder().serializeNulls().create()
     private var retrofit: Retrofit = Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).client(okHttpClient).baseUrl("http://10.0.2.2:8080/").build()
 
-    fun login(user:User):User?{
+    fun login(user:User, callback: ApiCallback<User>) {
         val api = retrofit.create(UserApi::class.java)
         val call = api.login(user)
         var user:User? = null
@@ -33,7 +33,7 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
                     Log.d("WWWW", "onResponse: $user1")
                     if(user1!=null){
                         user = user1
-
+                            callback.onResponse(user)
                     }
                 }
             }
@@ -42,6 +42,6 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
             }
         })
 
-        return user
+//        return user
     }
 }
