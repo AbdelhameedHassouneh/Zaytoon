@@ -50,13 +50,8 @@ class LogInModel():ViewModel() {
             }
 
             override fun onComplete() {
-
-
             }
-
         }
         observable.subscribe(observer)
-
     }
-
 }

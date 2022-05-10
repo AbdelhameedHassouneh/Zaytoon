@@ -1,10 +1,12 @@
 package com.example.avocadoandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.avocadoandroid.databinding.ActivityMainBinding
+import com.example.avocadoandroid.entities.User
 import com.example.avocadoandroid.models.LogInModel
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             val password = binding.passwordEditText.text.toString()
             viewModel.loginButton(email,password)
         }
-
+        viewModel.user.observe(this ){
+            if(it!=null){
+                val intent:Intent = Intent()
+            }
+        }
     }
 }
