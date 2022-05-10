@@ -26,7 +26,7 @@ class LogInModel():ViewModel() {
     @Inject
     lateinit var userManager:UserManager
     private var _user = MutableLiveData<User>()
-    val user:LiveData<User> get() = user
+    val user:LiveData<User> get() = _user
 
     fun loginButton ( email:String, password:String){
         val userToCheck:User = User(email,password)
