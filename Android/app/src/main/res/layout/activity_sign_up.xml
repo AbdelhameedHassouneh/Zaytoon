@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/edit_text_first_name"
+        android:id="@+id/edit_text_height"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/edit_text_last_name"
+        android:id="@+id/edit_text_Weight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -55,11 +55,11 @@
         android:hint="Last Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_first_name"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_first_name" />
+        app:layout_constraintStart_toStartOf="@+id/edit_text_height"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_height" />
 
     <EditText
-        android:id="@+id/edit_text_email"
+        android:id="@+id/edit_text_age"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -68,11 +68,11 @@
         android:hint="email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_last_name"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_last_name" />
+        app:layout_constraintStart_toStartOf="@+id/edit_text_Weight"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_Weight" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/edit_text_gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -81,19 +81,20 @@
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_email"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+        app:layout_constraintStart_toStartOf="@+id/edit_text_age"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_age" />
 
     <Button
         android:id="@+id/button_sign_up"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_gender"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_gender" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

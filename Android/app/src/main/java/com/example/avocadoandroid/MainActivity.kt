@@ -24,12 +24,18 @@ class MainActivity : AppCompatActivity() {
             if(email.isBlank()||password.isBlank()){
                 Toast.makeText(applicationContext, "Please fill all the fields", Toast.LENGTH_LONG).show()
 
+            }else {
+                viewModel.loginButton(email, password)
             }
-            viewModel.loginButton(email,password)
+        }
+
+        binding.buttonSignUp.setOnClickListener{
+            val intent:Intent = Intent(this,UserMeasurmentsActivity::class.java)
+            startActivity(intent)
         }
         viewModel.user.observe(this ){
             if(it!=null){
-                val intent:Intent = Intent(this,SignUpActivity::class.java)
+                val intent:Intent = Intent(this,TabsActivity::class.java)
                 startActivity(intent)
             }
         }
