@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonSignUp.setOnClickListener{
-            val intent:Intent = Intent(this,UserMeasurmentsActivity::class.java)
+            val intent:Intent = Intent(this,UserMeasurementsActivity::class.java)
             startActivity(intent)
         }
         viewModel.user.observe(this ){

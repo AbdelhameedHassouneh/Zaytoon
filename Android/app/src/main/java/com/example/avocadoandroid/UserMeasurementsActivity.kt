@@ -12,7 +12,7 @@ import com.example.avocadoandroid.databinding.ActivityUserMeasurmentsBinding
 import com.example.avocadoandroid.entities.User
 import java.lang.Exception
 
-class UserMeasurmentsActivity : AppCompatActivity() {
+class UserMeasurementsActivity : AppCompatActivity() {
     private lateinit var binding:ActivityUserMeasurmentsBinding
     private lateinit var spinner:Spinner
     override fun onCreate(savedInstanceState: Bundle?) {

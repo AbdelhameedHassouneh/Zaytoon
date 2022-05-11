@@ -18,7 +18,9 @@ class RetrofitModule {
     @Singleton
     @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor()
+        val httpLoggingInterceptor:HttpLoggingInterceptor = HttpLoggingInterceptor()
+        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return httpLoggingInterceptor
     }
 
 }

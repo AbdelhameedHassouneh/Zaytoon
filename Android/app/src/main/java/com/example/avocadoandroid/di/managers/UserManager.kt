@@ -13,4 +13,9 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
         return excutor.login(user)
     }
 
+
+    fun signUp(user:User):io.reactivex.rxjava3.core.Observable<User>{
+        return excutor.signUp(user)
+    }
+
 }

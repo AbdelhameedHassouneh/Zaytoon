@@ -14,4 +14,9 @@ interface UserApi {
 
     @POST("login")
     fun login(@Body user:User): Observable<User>
+
+    @POST("signup")
+    fun signUp(@Body user:User):Observable<User>
+
+
 }

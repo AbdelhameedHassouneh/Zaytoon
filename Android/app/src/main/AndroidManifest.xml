@@ -14,7 +14,7 @@
         android:theme="@style/splashTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UserMeasurmentsActivity"
+            android:name=".UserMeasurementsActivity"
             android:exported="false" />
         <activity
             android:name=".TabsActivity"

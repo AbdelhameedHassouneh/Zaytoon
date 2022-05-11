@@ -10,5 +10,6 @@ class TabsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tabs)
 
 
+
     }
 }
