@@ -13,5 +13,6 @@ CREATE TABLE IF NOT EXISTS user (
                          PRIMARY KEY (id),
                          UNIQUE (email)
 );
+delete from user where id > 0;
 INSERT INTO user values (1,'Mahmood','Abu Awwad' , 24, 'MALE','abuawwadmahmood@gmail.com','0569391236',82,182,'123123');
 INSERT INTO user values (2,'test','test' , null, 'FEMALE','test@test',null,100,100,'123123');

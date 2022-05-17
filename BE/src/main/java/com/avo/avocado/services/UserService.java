@@ -70,5 +70,32 @@ public class UserService {
         }
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
+
+    public ResponseEntity<UserResponse> editUser(UserDTO userEdit) {
+        User user = userRepository.findById(userEdit.getId());
+        try {
+            user.setLastName(userEdit.getLast_name());
+            user.setWeight(userEdit.getWeight());
+            user.setHeight(userEdit.getHeight());
+            user.setFirstName(userEdit.getFirst_name());
+            user.setGender(userEdit.getGender());
+            user.setAge(userEdit.getAge());
+            user.setEmail(userEdit.getEmail());
+            userRepository.save(user);
+        } catch (Exception e ){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        UserResponse userResponse = new UserResponse();
+        userResponse.setAge(user.getAge());
+        userResponse.setHeight(user.getHeight());
+        userResponse.setWeight(user.getWeight());
+        userResponse.setGender(user.getGender());
+        userResponse.setPhone(user.getPhone());
+        userResponse.setId(user.getId());
+        userResponse.setEmail(user.getEmail());
+        userResponse.setFirst_name(user.getFirstName());
+        userResponse.setLast_name(user.getLastName());
+        return new ResponseEntity<>(userResponse,HttpStatus.OK);
+    }
 }
 
