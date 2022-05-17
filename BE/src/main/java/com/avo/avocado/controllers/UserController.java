@@ -5,9 +5,9 @@ import com.avo.avocado.utils.Exceptions.UserNotFoundException;
 import com.avo.avocado.utils.dtos.UserDTO;
 import com.avo.avocado.utils.entites.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +25,11 @@ public class UserController {
     @PostMapping("signup")
     public ResponseEntity<UserResponse> signup(@RequestBody UserDTO userSignup) {
         return userService.signup(userSignup);
+    }
+
+    @PutMapping("edit")
+    public ResponseEntity<UserResponse> editUser(@RequestBody UserDTO userEdit) {
+        return userService.editUser(userEdit);
     }
 
 }
