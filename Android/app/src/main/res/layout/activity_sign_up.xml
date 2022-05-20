@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:src="@drawable/green_pizza"
+            android:src="@drawable/rsz_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -98,6 +98,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
 
         <Button
+            android:backgroundTint="@color/zaytoon"
             android:id="@+id/button_sign_up"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
