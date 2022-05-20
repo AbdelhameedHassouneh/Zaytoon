@@ -12,12 +12,10 @@ public class CaloriesService {
         double result = 0;
         switch (caloricNeedsDTO.getGender()){
             case MALE:
-                result = 66.5 + (13.75 * caloricNeedsDTO.getWeight()) + (5.003 * caloricNeedsDTO.getHeight()) -
-                        (6.75 * caloricNeedsDTO.getAge()) * caloricNeedsDTO.getLevel_of_activity().getLevelOfActivityValue();
+                result = ((10* caloricNeedsDTO.getWeight()) + (6.25 * caloricNeedsDTO.getHeight()) - (5 * caloricNeedsDTO.getAge()) + 5) * caloricNeedsDTO.getLevel_of_activity().getLevelOfActivityValue();
                 break;
             case FEMALE:
-                result =  655.1 + (9.563 * caloricNeedsDTO.getWeight()) + (1.850 * caloricNeedsDTO.getHeight())
-                        - (4.676 * caloricNeedsDTO.getAge()) * caloricNeedsDTO.getLevel_of_activity().getLevelOfActivityValue();
+                result =  ((10 * caloricNeedsDTO.getWeight()) + (6.25 * caloricNeedsDTO.getHeight()) - (5 * caloricNeedsDTO.getAge()) -161) * caloricNeedsDTO.getLevel_of_activity().getLevelOfActivityValue();
                 break;
         }
         CaloricNeedsResponse  caloricNeedsResponse = new CaloricNeedsResponse();
