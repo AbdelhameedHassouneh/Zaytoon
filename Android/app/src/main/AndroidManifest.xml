@@ -14,6 +14,9 @@
         android:theme="@style/splashTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DrawerActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserMeasurementsActivity"
             android:exported="false" />
         <activity

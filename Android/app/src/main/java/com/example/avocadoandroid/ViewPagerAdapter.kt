@@ -14,8 +14,6 @@ class ViewPagerAdapter(private var list: List<Tab>):RecyclerView.Adapter<ViewPag
         val itemTitle:TextView = itemView.findViewById(R.id.title_item_page)
         val imageView:ImageView = itemView.findViewById(R.id.image_view_item_page)
 
-
-
     }
 
     override fun onCreateViewHolder(
