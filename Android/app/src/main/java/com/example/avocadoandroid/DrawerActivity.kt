@@ -8,17 +8,21 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.lifecycle.ViewModelProviders
 import com.example.avocadoandroid.fragments.CalculateFragment
 import com.example.avocadoandroid.fragments.EditFragment
 import com.example.avocadoandroid.fragments.ZaytoonFragment
+import com.example.avocadoandroid.models.UserSharedViewModel
 import com.google.android.material.navigation.NavigationView
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private lateinit var viewModel: UserSharedViewModel
     private lateinit var drawer:DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_AvocadoAndroid)
         setContentView(R.layout.activity_drawer)
+        viewModel = ViewModelProviders.of(this)[UserSharedViewModel::class.java]
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
