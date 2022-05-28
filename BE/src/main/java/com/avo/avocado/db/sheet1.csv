@@ -40,14 +40,14 @@ Street snacks,Falafel,,1 large falafel,,,1.4,4.9,15,90,Falafel
 Street snacks,Kubbeh,,,,,11,19.4,30.2,258.6,Kubbeh
 Street snacks,Lupine,,100 g,,,3,15.6,10,119,Lupine
 Street snacks,Fava Beans,,100 g,,,0.7,7.9,17.6,88,Fava Beans
-Sandwiches,shawarma chicken ,"(Shrak bread، 225 g of Chicken، Salad)",,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Chicken Shawarma
-Sandwiches,shawarma beef,"(Shrak bread ، 225 g of Beef ، Salad)",,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Beef Shawarma
-Sandwiches,Flafel sandwich ,"(Pita bread،2 large Flafel، Salad)",,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of hummus =  27 calories,1.7,12.8,48,274٫5,Flafel Sandwich
-Sandwiches,BBQ ,,,,,,,,,Barbeque (sandwich Kabab)
-Sandwiches,Shan,"( Labaneh، Makdoos، Salad)",,S, ,15.2,13.2,48.5,390,Shankleesh
-Sandwiches,Shan,"( Labaneh، Makdoos، Salad)",,L, ,17.2,17,62,477,Shankleesh
-Bakeries,Man,,,,,,,,,Manaqeesh 
-Bakeries,AR,,,,,,,,,Arayes( Meat stuffed pitas )
-Bakeries,Kaak,,,,,,,,,Kaak Al-Quds
+Sandwiches,shawarma chicken ,(Shrak bread، 225 g of Chicken، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Chicken Shawarma
+Sandwiches,shawarma beef,(Shrak bread، 225 g of Beef، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Beef Shawarma
+Sandwiches,Flafel sandwich ,(Pita bread،2 large Flafel، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of hummus =  27 calories,1.7,12.8,48,274.5,Flafel Sandwich
+Sandwiches,BBQ ,,,,,0,0,0,0,Barbeque (sandwich Kabab)
+Sandwiches,Shan,( Labaneh، Makdoos، Salad),,S, ,15.2,13.2,48.5,390,Shankleesh
+Sandwiches,Shan,( Labaneh، Makdoos، Salad),,L, ,17.2,17,62,477,Shankleesh
+Bakeries,Man,,,,,0,0,0,0,Manaqeesh
+Bakeries,AR,,,,,0,0,0,0,Arayes( Meat stuffed pitas )
+Bakeries,Kaak,,,,,0,0,0,0,Kaak Al-Quds
 Sweets,Knafeh,,200 g,,,26,23,61,600,Knafeh
 Sweets,cotton candy,,,,,0,0,20,80,Cotton Candy
