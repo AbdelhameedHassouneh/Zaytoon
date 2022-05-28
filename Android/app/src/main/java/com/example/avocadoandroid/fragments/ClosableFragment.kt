@@ -5,23 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.avocadoandroid.R
-import com.example.avocadoandroid.databinding.FragmentZaytoonBinding
+import com.example.avocadoandroid.databinding.FragmentClosableBinding
 
-class ZaytoonFragment : Fragment(R.layout.fragment_zaytoon) {
-
-    private lateinit var binding:FragmentZaytoonBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class ClosableFragment : DialogFragment() {
+    private lateinit var binding:FragmentClosableBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = DataBindingUtil.inflate(inflater,)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_closable,container,false)
+        return binding.root
     }
 }

@@ -14,22 +14,23 @@ import javax.inject.Inject
 
 class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
 
-
     val gson = GsonBuilder().serializeNulls().create()
     private var retrofit: Retrofit = Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).
     addCallAdapterFactory(RxJava3CallAdapterFactory.create()).
     client(okHttpClient).baseUrl("http://10.0.2.2:8080/").build()
-
-
 
     fun login(userToCheck: User): Observable<User> {
         val api = retrofit.create(UserApi::class.java)
         return api.login(userToCheck)
     }
 
-
     fun signUp(userToSignUp:User):Observable<User>{
         val api = retrofit.create(UserApi::class.java)
         return api.signUp(userToSignUp)
+    }
+
+    fun edit(userToEdit:User):Observable<User>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.editProfile(userToEdit)
     }
 }

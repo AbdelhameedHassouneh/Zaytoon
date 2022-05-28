@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProviders
+import com.example.avocadoandroid.entities.User
 import com.example.avocadoandroid.fragments.CalculateFragment
 import com.example.avocadoandroid.fragments.EditFragment
 import com.example.avocadoandroid.fragments.ZaytoonFragment
@@ -18,12 +19,23 @@ import com.google.android.material.navigation.NavigationView
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var viewModel: UserSharedViewModel
     private lateinit var drawer:DrawerLayout
+    private lateinit var staticUSer:User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_AvocadoAndroid)
         setContentView(R.layout.activity_drawer)
-        viewModel = ViewModelProviders.of(this)[UserSharedViewModel::class.java]
 
+        viewModel = ViewModelProviders.of(this)[UserSharedViewModel::class.java]
+        (application as MyApplication).getComponent().inject(viewModel)
+
+        val user = intent.getSerializableExtra("user") as? User
+        if(user!=null){
+            viewModel.setUser(user)
+        }
+
+        viewModel.userLiveData.observe(this){
+            staticUSer = it
+        }
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 

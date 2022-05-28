@@ -18,4 +18,8 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
         return excutor.signUp(user)
     }
 
+    fun editProfile(user:User): io.reactivex.rxjava3.core.Observable<User> {
+        return excutor.edit(user)
+    }
+
 }
