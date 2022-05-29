@@ -53,4 +53,7 @@ public class FoodItem {
     @Column(name = "sub_title")
     private String sub_title;
 
+    @Column(name = "zayton_section")
+    private String zaytonSection;
+
 }

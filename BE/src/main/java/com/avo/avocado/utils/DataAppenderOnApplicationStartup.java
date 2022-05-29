@@ -83,21 +83,22 @@ public class DataAppenderOnApplicationStartup
                 try {
                     String  query = "insert into  food_item values (" +
                             "'"+record.getId()+"'," +
-                            "'"+record.getFood_section()+"'," +
-                            "'"+record.getPicture_name()+"'," +
-                            "\""+record.getSub_title()+"\"," +
-                            "'"+record.getQuantity()+"'," +
-                            "'"+record.getFood_size()+"'," +
-                            "\""+record.getSide_notes()+"\"," +
-                             record.getFats()+"," +
-                             record.getCarbs()+"," +
-                             record.getCalories()+"," +
-                             record.getProtein()+"," +
-                            "'"+record.getFood_item()+"'" +
+                            "'"+record.getFood_section().trim()+"'," +
+                            "'"+record.getPicture_name().trim()+"'," +
+                            "\""+record.getSub_title().trim()+"\"," +
+                            "'"+record.getQuantity().trim()+"'," +
+                            "'"+record.getFood_size().trim()+"'," +
+                            "\""+record.getSide_notes().trim()+"\"," +
+                             record.getFats().trim()+"," +
+                             record.getCarbs().trim()+"," +
+                             record.getCalories().trim()+"," +
+                             record.getProtein().trim()+"," +
+                            "'"+record.getFood_item().trim()+"'," +
+                            "'street_food'" +
                             ")";
                     stmt.execute(query);
                 } catch (SQLException e) {
-                    System.out.println("Failed to Save food item");
+                    System.out.println("Failed to Save street food item");
                     e.printStackTrace();
                 }
             });
