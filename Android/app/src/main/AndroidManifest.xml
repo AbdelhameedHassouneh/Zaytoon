@@ -19,9 +19,7 @@
         <activity
             android:name=".UserMeasurementsActivity"
             android:exported="false" />
-        <activity
-            android:name=".TabsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

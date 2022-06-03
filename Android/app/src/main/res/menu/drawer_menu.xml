@@ -4,19 +4,34 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
 
-        <item android:id="@+id/zaytoon_item"
+        <item
+            android:id="@+id/zaytoon_item"
             android:icon="@drawable/ic_edit"
-            android:title="Zaytoon">
-        </item>
+            android:title="Zaytoon"></item>
 
-        <item android:id="@+id/needs_item"
+        <item
+            android:id="@+id/needs_item"
             android:icon="@drawable/ic_daily"
-            android:title="Your Daily Caloric Needs">
-        </item>
+            android:title="Find your Daily Caloric Needs"></item>
 
-        <item android:id="@+id/edit_profile_item"
+        <item
+            android:id="@+id/look_for_calorie_and_nut_item"
+            android:icon="@drawable/ic_daily"
+            android:title="Look for Calorie and Nutrition Information"></item>
+
+        <item
+            android:id="@+id/make_the_best_choice_for_you_item"
+            android:icon="@drawable/ic_daily"
+            android:title="Make the best choice for you"></item>
+
+        <item
+            android:id="@+id/know_more_item"
+            android:icon="@drawable/ic_daily"
+            android:title="Know more"></item>
+
+        <item
+            android:id="@+id/edit_profile_item"
             android:icon="@drawable/ic_edit"
-            android:title="Edit profile">
-        </item>
+            android:title="Edit profile"></item>
     </group>
 </menu>

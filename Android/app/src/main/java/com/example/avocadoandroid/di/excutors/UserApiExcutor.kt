@@ -1,6 +1,8 @@
 package com.example.avocadoandroid.di.excutors
 
 import com.example.avocadoandroid.di.apis.UserApi
+import com.example.avocadoandroid.entities.CaloricNeedsResponse
+import com.example.avocadoandroid.entities.CaloriesDTO
 import com.example.avocadoandroid.entities.User
 import com.google.gson.GsonBuilder
 import io.reactivex.rxjava3.core.Observable
@@ -32,5 +34,10 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
     fun edit(userToEdit:User):Observable<User>{
         val api = retrofit.create(UserApi::class.java)
         return api.editProfile(userToEdit)
+    }
+
+    fun calculateNeeds(caloriesDTO: CaloriesDTO):Observable<CaloricNeedsResponse>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.calcualteCaloricNeeds(caloriesDTO)
     }
 }

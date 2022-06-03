@@ -36,7 +36,6 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = super.onCreateView(inflater, container, savedInstanceState)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit, container, false)
 
         return binding.root

@@ -2,6 +2,8 @@ package com.example.avocadoandroid.di.managers
 
 import android.database.Observable
 import com.example.avocadoandroid.di.excutors.UserApiExcutor
+import com.example.avocadoandroid.entities.CaloricNeedsResponse
+import com.example.avocadoandroid.entities.CaloriesDTO
 import com.example.avocadoandroid.entities.User
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
@@ -20,6 +22,10 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
 
     fun editProfile(user:User): io.reactivex.rxjava3.core.Observable<User> {
         return excutor.edit(user)
+    }
+
+    fun calculateNeeds(dto: CaloriesDTO):io.reactivex.rxjava3.core.Observable<CaloricNeedsResponse>{
+        return excutor.calculateNeeds(dto)
     }
 
 }

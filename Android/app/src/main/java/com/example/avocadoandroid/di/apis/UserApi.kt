@@ -1,14 +1,10 @@
 package com.example.avocadoandroid.di.apis
 
+import com.example.avocadoandroid.entities.CaloricNeedsResponse
+import com.example.avocadoandroid.entities.CaloriesDTO
 import com.example.avocadoandroid.entities.User
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.core.Single
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 
 interface UserApi {
@@ -21,4 +17,7 @@ interface UserApi {
 
     @PUT("edit")
     fun editProfile(@Body user:User):Observable<User>
+
+    @HTTP(path = "caloric_needs", method = "GET", hasBody = true)
+    fun calcualteCaloricNeeds(@Body caloriesDTO: CaloriesDTO):Observable<CaloricNeedsResponse>
 }
