@@ -19,7 +19,7 @@ public class CaloriesController {
     @Autowired
     private CaloriesService caloriesService;
 
-    @GetMapping("caloric_needs")
+    @PostMapping("caloric_needs")
     public ResponseEntity<CaloricNeedsResponse> calculateCaloricNeeds(@RequestBody CaloricNeedsDTO caloricNeedsDTO)  {
         return  caloriesService.calculateCaloricNeeds(caloricNeedsDTO);
     }

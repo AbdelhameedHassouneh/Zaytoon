@@ -15,12 +15,12 @@ public class FoodItemController {
     @Autowired
     private FoodItemService foodItemService;
 
-    @GetMapping("categories")
+    @PostMapping("categories")
     public ResponseEntity<CategoriesResponse> getCategories(@RequestBody CategoryDTO zaytonSection)  {
         return foodItemService.getCategories(zaytonSection.getZaytonSection());
     }
 
-    @GetMapping("categories_items")
+    @PostMapping("categories_items")
     public ResponseEntity<CategoryFoodItemResponse> getCategoriesItems(@RequestBody CategoryDTO zaytonSection)  {
         return foodItemService.getFoodItemsByCategoryAndSection(zaytonSection.getZaytonSection(), zaytonSection.getCategory_name());
     }
