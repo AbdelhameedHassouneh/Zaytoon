@@ -44,4 +44,28 @@ public class FoodItemService {
 
         return new ResponseEntity<>(categoryFoodItemResponse, HttpStatus.OK);
     }
+
+    public ResponseEntity<FoodItemResponse> getFoodItemsByName(String item_name) {
+        FoodItemResponse foodItemResponse = new FoodItemResponse();
+        List<FoodItem> res =  foodItemRepository.findAllByFoodItemName(item_name);
+        foodItemResponse.setFoodItem(res.get(0).getFoodItemName());
+        foodItemResponse.setFoodSection(res.get(0).getFood_section());
+        foodItemResponse.setPictureName(res.get(0).getPicture_name());
+        foodItemResponse.setSideNotes(res.get(0).getSide_notes());
+        foodItemResponse.setZaytonSection(res.get(0).getZaytonSection());
+        foodItemResponse.setSubTitle(res.get(0).getFoodItemName());
+        List<FoodItemSize> foodItemSizes = new ArrayList<>();
+        res.stream().forEach(record->{
+            FoodItemSize foodItemSize = new FoodItemSize();
+            foodItemSize.setFood_size(record.getFood_size());
+            foodItemSize.setCalories(record.getCalories());
+            foodItemSize.setCarbs(record.getCarbs());
+            foodItemSize.setFats(record.getFats());
+            foodItemSize.setQuantity(record.getQuantity());
+            foodItemSize.setProtein(record.getProtein());
+            foodItemSizes.add(foodItemSize);
+        });
+        foodItemResponse.setSizesInfo(foodItemSizes);
+        return new ResponseEntity<>(foodItemResponse, HttpStatus.OK);
+    }
 }
