@@ -26,11 +26,5 @@ class ZaytoonFragment : Fragment(R.layout.fragment_zaytoon) {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-//        binding.button.setOnClickListener{
-//            val dialogFragment = ClosableFragment()
-//            dialogFragment.show(parentFragmentManager, "My  Fragment")
-//        }
-    }
+
 }

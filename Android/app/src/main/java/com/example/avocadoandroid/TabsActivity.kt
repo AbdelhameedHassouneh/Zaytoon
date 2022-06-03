@@ -13,10 +13,7 @@ class TabsActivity : AppCompatActivity() {
         setTheme(R.style.Theme_AvocadoAndroid)
         setContentView(R.layout.activity_tabs)
 
-
         binding = DataBindingUtil.setContentView(this,R.layout.activity_tabs)
-
-
 
     }
 }
