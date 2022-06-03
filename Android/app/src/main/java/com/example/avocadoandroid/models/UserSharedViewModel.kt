@@ -61,6 +61,7 @@ class UserSharedViewModel : ViewModel() {
     }
 
     fun calculateNeeds(dto: CaloriesDTO) {
+
         val observable: Observable<CaloricNeedsResponse> =
             userManager.calculateNeeds(dto).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
