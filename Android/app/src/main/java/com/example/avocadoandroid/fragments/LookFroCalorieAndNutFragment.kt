@@ -34,6 +34,8 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.streetFoodLay.titleTextView.text= "StreetFood"
         binding.streetFoodLay.catImageView.setImageResource(R.drawable.street_foods)
 
+
+
         binding.foodTrucksLay.titleTextView.text = "Food Trucks"
         binding.foodTrucksLay.catImageView.setImageResource(R.drawable.food_trucks)
 
