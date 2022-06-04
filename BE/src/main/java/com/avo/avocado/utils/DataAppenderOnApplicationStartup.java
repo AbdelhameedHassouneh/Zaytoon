@@ -1,13 +1,10 @@
 package com.avo.avocado.utils;
 
-import com.avo.avocado.repositories.FoodItemRepository;
 import com.avo.avocado.utils.models.FoodItem;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -60,7 +57,7 @@ public class DataAppenderOnApplicationStartup
             String sub_title = lineOfData.split(",")[2];
 
             foodItem.setId(counter);
-            foodItem.setFood_item(food_item);
+            foodItem.setFoodItemName(food_item);
             foodItem.setCalories(calories);
             foodItem.setFats(fats);
             foodItem.setCarbs(carbs);
@@ -93,7 +90,7 @@ public class DataAppenderOnApplicationStartup
                              record.getCarbs().trim()+"," +
                              record.getCalories().trim()+"," +
                              record.getProtein().trim()+"," +
-                            "'"+record.getFood_item().trim()+"'," +
+                            "'"+record.getFoodItemName().trim()+"'," +
                             "'street_food'" +
                             ")";
                     stmt.execute(query);

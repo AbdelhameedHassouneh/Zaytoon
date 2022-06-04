@@ -19,4 +19,7 @@ public interface FoodItemRepository extends CrudRepository<FoodItem,Long>  {
             "side_notes as sideNotes,food_item as foodItem,zayton_section as zaytonSection from food_item where " +
             "zayton_section=:zaytonSection and food_section =:foodSection ",nativeQuery = true)
     List<FoodItemsInterface> getFoodItemsBySectionAndCategory(@Param("zaytonSection") String zaytonSection, @Param("foodSection") String foodSection );
+
+    List<FoodItem> findAllByFoodItemName( String itemName );
+
 }

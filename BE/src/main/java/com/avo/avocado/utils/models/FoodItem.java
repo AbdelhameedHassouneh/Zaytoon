@@ -48,7 +48,7 @@ public class FoodItem {
     private String side_notes;
 
     @Column(name = "food_item")
-    private String food_item;
+    private String foodItemName;
 
     @Column(name = "sub_title")
     private String sub_title;
