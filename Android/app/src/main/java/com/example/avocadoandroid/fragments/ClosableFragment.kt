@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import com.example.avocadoandroid.R
 import com.example.avocadoandroid.databinding.FragmentClosableBinding
-import com.example.avocadoandroid.entities.ClosableClass
+import com.example.avocadoandroid.entities.DataHolder
 import com.example.avocadoandroid.recyclers.ClosableItemAdapter
 
 class ClosableFragment : DialogFragment() {
@@ -24,8 +23,8 @@ class ClosableFragment : DialogFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_closable,container,false)
         closableItemAdapter = ClosableItemAdapter()
         val recyclerView = binding.closableRecycler
-        closableItemAdapter.submitList(mutableListOf<ClosableClass>(ClosableClass(R.drawable.logoo,"textttt"),
-            ClosableClass(R.drawable.logoo,"qweqweqwe")))
+        closableItemAdapter.submitList(mutableListOf<DataHolder>(DataHolder(R.drawable.logoo,"textttt"),
+            DataHolder(R.drawable.logoo,"qweqweqwe")))
         recyclerView.adapter = closableItemAdapter
 
         return binding.root

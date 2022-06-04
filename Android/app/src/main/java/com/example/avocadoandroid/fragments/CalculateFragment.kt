@@ -1,12 +1,13 @@
 package com.example.avocadoandroid.fragments
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -53,11 +54,30 @@ class CalculateFragment : Fragment(R.layout.fragment_calculate) {
                 binding.maleTextView.setTextColor(Color.parseColor("#FF3700B3"))
             }
         }
+        viewModel.caloricNeeds.observe(viewLifecycleOwner){
+            val builder: AlertDialog.Builder =  AlertDialog.Builder(requireContext());
+            builder.setMessage("Your caloric Needs:${it}")
+                .setCancelable(true)
+                .setNeutralButton(
+                    "Close",
+                    DialogInterface.OnClickListener { dialog, id -> //  Action for 'NO' Button
+                        dialog.cancel()
+
+                    })
+            //Creating dialog box
+            //Creating dialog box
+            val alert: AlertDialog = builder.create()
+            //Setting the title manually
+            //Setting the title manually
+            alert.setTitle("Calorie Intake")
+            alert.show()
+
+        }
 
         binding.button.setOnClickListener{
             val levelOfActSpinner:String = binding.spinner.selectedItem.toString()
             val levelOfAct:String = when(levelOfActSpinner){
-                "Light exercise (1-3 days per week)"->"LIGTH"
+                "Light exercise (1-3 days per week)"->"LIGHT"
                 "Moderate exercise (3-5 days per week)"->"MODERATE"
                 "Heavy exercise (6-7 days per week)"->"HIGH"
                 "Very heavy exercise (twice per day)"->"VERY_HIGH"

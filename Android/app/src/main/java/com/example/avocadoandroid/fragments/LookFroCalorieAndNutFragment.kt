@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.avocadoandroid.R
 import com.example.avocadoandroid.databinding.FragmentEditBinding
 import com.example.avocadoandroid.databinding.FragmentLookFroCalorieAndNutBinding
+import com.example.avocadoandroid.entities.DataHolder
 import com.example.avocadoandroid.models.UserSharedViewModel
 
 
@@ -29,6 +30,27 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_look_fro_calorie_and_nut, container, false)
+
+        binding.streetFoodLay.titleTextView.text= "StreetFood"
+        binding.streetFoodLay.catImageView.setImageResource(R.drawable.street_foods)
+
+        binding.foodTrucksLay.titleTextView.text = "Food Trucks"
+        binding.foodTrucksLay.catImageView.setImageResource(R.drawable.food_trucks)
+
+        binding.restaurantsLay.titleTextView.text = "Restaurants"
+        binding.restaurantsLay.catImageView.setImageResource(R.drawable.resturants)
+
+        binding.bakeriesLay.titleTextView.text = "Bakeries"
+        binding.bakeriesLay.catImageView.setImageResource(R.drawable.bakeries)
+
+
+        binding.sweetShopsLay.titleTextView.text = "Sweet shops"
+        binding.sweetShopsLay.catImageView.setImageResource(R.drawable.sweets)
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

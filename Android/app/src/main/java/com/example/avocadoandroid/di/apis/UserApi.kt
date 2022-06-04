@@ -18,6 +18,6 @@ interface UserApi {
     @PUT("edit")
     fun editProfile(@Body user:User):Observable<User>
 
-    @HTTP(path = "caloric_needs", method = "GET", hasBody = true)
+    @POST("caloric_needs")
     fun calcualteCaloricNeeds(@Body caloriesDTO: CaloriesDTO):Observable<CaloricNeedsResponse>
 }

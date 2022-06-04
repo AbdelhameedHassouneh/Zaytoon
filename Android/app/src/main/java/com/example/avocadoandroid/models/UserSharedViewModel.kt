@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.avocadoandroid.SingleLiveEvent
 import com.example.avocadoandroid.di.managers.UserManager
 import com.example.avocadoandroid.entities.CaloricNeedsResponse
 import com.example.avocadoandroid.entities.CaloriesDTO
@@ -24,6 +25,9 @@ class UserSharedViewModel : ViewModel() {
 
     private val _userToEditLiveData = MutableLiveData<User>()
     val userToEditLiveData: LiveData<User> get() = _userToEditLiveData
+
+    private val _caloricNeeds = SingleLiveEvent<Double>()
+    val caloricNeeds :LiveData<Double> get() = _caloricNeeds
 
     fun setUser(user: User) {
         _userLiveData.postValue(user)
@@ -73,6 +77,7 @@ class UserSharedViewModel : ViewModel() {
 
             override fun onNext(t: CaloricNeedsResponse) {
                 Log.d(TAG, "onNext in the sign up: $t")
+                _caloricNeeds.postValue(t.caloricNeeds)
             }
 
             override fun onError(e: Throwable) {
@@ -82,6 +87,6 @@ class UserSharedViewModel : ViewModel() {
             override fun onComplete() {
             }
         }
-
+        observable.subscribe(observer)
     }
 }
