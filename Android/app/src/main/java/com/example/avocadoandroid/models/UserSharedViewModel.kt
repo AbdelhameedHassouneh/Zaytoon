@@ -89,4 +89,30 @@ class UserSharedViewModel : ViewModel() {
         }
         observable.subscribe(observer)
     }
+
+
+    fun getCategories(zaytoonCat:String){
+        val observable:Observable<List<String>> = userManager.getCategories(zaytoonCat)
+            .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+
+        val observer: Observer<List<String>> = object : Observer<List<String>> {
+            override fun onSubscribe(d: Disposable) {
+                Log.d(TAG, "onSubscribe: ")
+            }
+
+            override fun onNext(t: List<String>) {
+                Log.d(TAG, "onNext in the sign up: $t")
+//                _caloricNeeds.postValue(t.caloricNeeds)
+            }
+
+            override fun onError(e: Throwable) {
+                Log.d(TAG, "onError: $e")
+            }
+
+            override fun onComplete() {
+            }
+        }
+        observable.subscribe(observer)
+
+    }
 }

@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import androidx.fragment.app.add
 import androidx.lifecycle.ViewModelProviders
 import com.example.avocadoandroid.R
 import com.example.avocadoandroid.databinding.FragmentEditBinding
@@ -33,22 +36,50 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
 
         binding.streetFoodLay.titleTextView.text= "StreetFood"
         binding.streetFoodLay.catImageView.setImageResource(R.drawable.street_foods)
-
-
+        binding.streetFoodLay.root.setOnClickListener{
+            parentFragmentManager.commit {
+                viewModel.getCategories("street_food")
+                add<ExpandableFragment>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
 
         binding.foodTrucksLay.titleTextView.text = "Food Trucks"
         binding.foodTrucksLay.catImageView.setImageResource(R.drawable.food_trucks)
+        binding.foodTrucksLay.root.setOnClickListener{
+            parentFragmentManager.commit {
+                add<ExpandableFragment>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
 
         binding.restaurantsLay.titleTextView.text = "Restaurants"
         binding.restaurantsLay.catImageView.setImageResource(R.drawable.resturants)
+        binding.restaurantsLay.root.setOnClickListener{
+            parentFragmentManager.commit {
+                add<ExpandableFragment>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
 
         binding.bakeriesLay.titleTextView.text = "Bakeries"
         binding.bakeriesLay.catImageView.setImageResource(R.drawable.bakeries)
+        binding.bakeriesLay.root.setOnClickListener{
 
+            parentFragmentManager.commit {
+                add<ExpandableFragment>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
 
         binding.sweetShopsLay.titleTextView.text = "Sweet shops"
         binding.sweetShopsLay.catImageView.setImageResource(R.drawable.sweets)
-
+        binding.sweetShopsLay.root.setOnClickListener{
+            parentFragmentManager.commit {
+                add<ExpandableFragment>(R.id.fragment_container)
+                addToBackStack(null)
+            }
+        }
         return binding.root
     }
 

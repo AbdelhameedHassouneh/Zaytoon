@@ -28,4 +28,8 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
         return excutor.calculateNeeds(dto)
     }
 
+    fun getCategories(str:String):io.reactivex.rxjava3.core.Observable<List<String>>{
+        return excutor.getCategories(str)
+    }
+
 }

@@ -40,4 +40,9 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
         val api = retrofit.create(UserApi::class.java)
         return api.calcualteCaloricNeeds(caloriesDTO)
     }
+
+    fun getCategories(string:String):Observable<List<String>>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.getCategories(string)
+    }
 }

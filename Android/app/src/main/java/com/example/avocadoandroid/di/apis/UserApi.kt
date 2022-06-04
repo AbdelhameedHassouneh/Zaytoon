@@ -20,4 +20,8 @@ interface UserApi {
 
     @POST("caloric_needs")
     fun calcualteCaloricNeeds(@Body caloriesDTO: CaloriesDTO):Observable<CaloricNeedsResponse>
+
+    @POST("categories")
+    fun getCategories(@Body string:String):Observable<List<String>>§
+
 }
