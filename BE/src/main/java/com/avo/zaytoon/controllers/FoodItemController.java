@@ -5,6 +5,7 @@ import com.avo.zaytoon.utils.dtos.CategoryDTO;
 import com.avo.zaytoon.utils.dtos.ItemsDTO;
 import com.avo.zaytoon.utils.entites.CategoriesResponse;
 import com.avo.zaytoon.utils.entites.CategoryFoodItemResponse;
+import com.avo.zaytoon.utils.entites.CategoryFoodItemsAggregatedResponse;
 import com.avo.zaytoon.utils.entites.FoodItemResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,5 +31,10 @@ public class FoodItemController {
     @PostMapping("items")
     public ResponseEntity<FoodItemResponse> getItems(@RequestBody ItemsDTO itemsDTO)  {
         return foodItemService.getFoodItemsByName(itemsDTO.getItem_name());
+    }
+
+    @PostMapping("categories_items_aggregated")
+    public ResponseEntity<CategoryFoodItemsAggregatedResponse> getCategoriesItemsAggregated(@RequestBody CategoryDTO zaytonSection)  {
+        return foodItemService.getFoodItemsByCategoryAndSectionAggregated(zaytonSection.getZaytonSection(), zaytonSection.getCategory_name());
     }
 }

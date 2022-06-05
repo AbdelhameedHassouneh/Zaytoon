@@ -22,4 +22,8 @@ public interface FoodItemRepository extends CrudRepository<FoodItem,Long>  {
 
     List<FoodItem> findAllByFoodItemName( String itemName );
 
+    List<FoodItem> findAllByZaytonSection( String zaytonSection );
+
+
+
 }
