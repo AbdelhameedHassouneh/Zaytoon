@@ -2,9 +2,8 @@ package com.example.avocadoandroid.di.managers
 
 import android.database.Observable
 import com.example.avocadoandroid.di.excutors.UserApiExcutor
-import com.example.avocadoandroid.entities.CaloricNeedsResponse
-import com.example.avocadoandroid.entities.CaloriesDTO
-import com.example.avocadoandroid.entities.User
+import com.example.avocadoandroid.entities.*
+import com.example.avocadoandroid.recycler_expandable.ChildItem
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
@@ -28,8 +27,11 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
         return excutor.calculateNeeds(dto)
     }
 
-    fun getCategories(str:String):io.reactivex.rxjava3.core.Observable<List<String>>{
-        return excutor.getCategories(str)
+    fun getCategories(dto:CategoryDto):io.reactivex.rxjava3.core.Observable<CategoriesResponse>{
+        return excutor.getCategories(dto)
     }
 
+    fun getCategoryItems(dto:CategoryDto):io.reactivex.rxjava3.core.Observable<List<ChildItem>>{
+        return excutor.getCategoryItems(dto)
+    }
 }

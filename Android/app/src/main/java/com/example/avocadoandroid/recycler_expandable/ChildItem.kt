@@ -1,4 +1,3 @@
 package com.example.avocadoandroid.recycler_expandable
 
-class ChildItem {
-}
+data class ChildItem (val pictureName:String,val sideNotes:String,val subTitle:String,val foodItem:String)
