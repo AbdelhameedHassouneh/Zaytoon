@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.user.observe(this ){
             if(it!=null){
-                val intent:Intent = Intent(this,TabsActivity::class.java)
+                val intent:Intent = Intent(this,DrawerActivity::class.java)
+                intent.putExtra("user",it)
                 startActivity(intent)
             }
         }

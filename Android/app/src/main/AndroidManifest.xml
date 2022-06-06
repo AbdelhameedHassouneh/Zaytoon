@@ -14,11 +14,12 @@
         android:theme="@style/splashTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UserMeasurementsActivity"
+            android:name=".DrawerActivity"
             android:exported="false" />
         <activity
-            android:name=".TabsActivity"
+            android:name=".UserMeasurementsActivity"
             android:exported="false" />
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

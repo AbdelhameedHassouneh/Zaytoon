@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.ZaytoonFragment">
+
+
+            <TextView
+                android:id="@+id/user_name_text"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textSize="35sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/find_your_need_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Find Out Your Calorie Needs"
+                android:textColor="@color/teal_200"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="@+id/user_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/user_name_text" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Knowing your calorie needs is important to managing your daily food and beverage choices. You can use 2,000 calories a day as a guide, but your calorie needs may vary based on your age, gender, weight, height and physical activity level."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/find_your_need_text"
+                app:layout_constraintTop_toBottomOf="@+id/find_your_need_text" />
+
+            <TextView
+                android:id="@+id/look_for_calorie_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="Look for Calorie and Nutrition Information"
+                android:textColor="@color/teal_200"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Eating healthy comes down to personal choices. Try these tips to help you make the best choices for you and your family.\n\nComparing calorie and nutrition information can help you make better decisions before you order.\n\nSide dishes can add many calories to a meal. Steamed, grilled, or broiled vegetables and fruit are often lower-calorie options. With calorie information, you can make the best choice for you.\n\nCalorie information can help you decide how much to enjoy now and how much to save for later.\n\nAsking for sauces or salad dressings on the side lets you choose how much to use."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/make_the_best_choice_text"
+                app:layout_constraintTop_toBottomOf="@+id/make_the_best_choice_text" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="The nutritional information in ZAYTOUN can help you make informed and healthful meal and snack choices."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/look_for_calorie_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/look_for_calorie_text_view" />
+
+            <TextView
+                android:id="@+id/make_the_best_choice_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="Make the Best Choice for You"
+                android:textColor="@color/teal_200"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/know_more_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp"
+                android:text="Know More"
+                android:textColor="@color/teal_200"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
