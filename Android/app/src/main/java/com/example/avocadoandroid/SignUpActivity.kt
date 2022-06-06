@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.avocadoandroid.databinding.ActivitySignUpBinding
@@ -29,7 +30,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this , R.layout.activity_sign_up)
         (application as MyApplication).getComponent().inject(viewModel)
 
-
         user = intent.getSerializableExtra("user") as? User
         Log.d(TAG, "onCreate: $user")
         binding.buttonSignUp.setOnClickListener{
@@ -46,15 +46,12 @@ class SignUpActivity : AppCompatActivity() {
                     Log.d(TAG, "last step before calling $user")
                     viewModel.signUp(user!!)
                 }
-
-
             }catch (e:Exception)
             {
                 Log.d(TAG, "onCreate: errorrooror ${e.message}")
+                Toast.makeText(this, "Please Fill all the fields", Toast.LENGTH_LONG).show()
             }
-
         }
-
         viewModel.user.observe(this){
             if(it!=null){
                 val intent = Intent(this,MainActivity::class.java)

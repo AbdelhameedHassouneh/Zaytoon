@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.LookFroCalorieAndNutFragment">
+
+        <include
+            android:id="@+id/street_food_lay"
+            layout="@layout/zaytoon_item_layout"></include>
+
+        <include
+            android:id="@+id/food_trucks_lay"
+            layout="@layout/zaytoon_item_layout"></include>
+
+        <include
+            android:id="@+id/restaurants_lay"
+            layout="@layout/zaytoon_item_layout"></include>
+
+        <include
+            android:id="@+id/bakeries_lay"
+            layout="@layout/zaytoon_item_layout"></include>
+
+        <include
+            android:id="@+id/sweet_shops_lay"
+            layout="@layout/zaytoon_item_layout"></include>
+
+
+    </LinearLayout>
+
+</layout>

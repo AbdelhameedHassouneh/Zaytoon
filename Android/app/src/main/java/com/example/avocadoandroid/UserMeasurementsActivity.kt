@@ -31,8 +31,6 @@ class UserMeasurementsActivity : AppCompatActivity() {
             Log.d("qqq", "onCreate: ${binding.editTextHeight.text.toString()}")
 
             try {
-
-
                 val height:Int = binding.editTextHeight.text.toString().toInt()
                 val weight:Double = binding.editTextWeight.text.toString().toDouble()
                 val age:Int = binding.editTextAge.text.toString().toInt()
@@ -44,19 +42,10 @@ class UserMeasurementsActivity : AppCompatActivity() {
                 val intent:Intent = Intent(this,SignUpActivity::class.java)
                 intent.putExtra("user",user)
                 startActivity(intent)
-
             }catch (e:Exception){
                 Toast.makeText(applicationContext, "Please Fill all the fields", Toast.LENGTH_LONG).show()
                 Log.d("qqq", "onCreate: ${e.message}")
-
             }
-
-
-
-
-
         }
-
-
     }
 }

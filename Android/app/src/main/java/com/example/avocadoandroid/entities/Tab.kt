@@ -1,6 +1,3 @@
 package com.example.avocadoandroid.entities
 
-class Tab(val image:Int , val title:String) {
-
-
-}
+class Tab(val image:Int , val title:String)
