@@ -1,8 +1,7 @@
 package com.example.avocadoandroid.di.apis
 
-import com.example.avocadoandroid.entities.CaloricNeedsResponse
-import com.example.avocadoandroid.entities.CaloriesDTO
-import com.example.avocadoandroid.entities.User
+import com.example.avocadoandroid.entities.*
+import com.example.avocadoandroid.recycler_expandable.ChildItem
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.*
 
@@ -22,6 +21,8 @@ interface UserApi {
     fun calcualteCaloricNeeds(@Body caloriesDTO: CaloriesDTO):Observable<CaloricNeedsResponse>
 
     @POST("categories")
-    fun getCategories(@Body string:String):Observable<List<String>>§
+    fun getCategories(@Body dto:CategoryDto):Observable<CategoriesResponse>
 
+    @POST("categories_items")
+    fun getCategoryItems(@Body dto:CategoryDto ):Observable<List<ChildItem>>
 }

@@ -1,9 +1,8 @@
 package com.example.avocadoandroid.di.excutors
 
 import com.example.avocadoandroid.di.apis.UserApi
-import com.example.avocadoandroid.entities.CaloricNeedsResponse
-import com.example.avocadoandroid.entities.CaloriesDTO
-import com.example.avocadoandroid.entities.User
+import com.example.avocadoandroid.entities.*
+import com.example.avocadoandroid.recycler_expandable.ChildItem
 import com.google.gson.GsonBuilder
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
@@ -41,8 +40,14 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
         return api.calcualteCaloricNeeds(caloriesDTO)
     }
 
-    fun getCategories(string:String):Observable<List<String>>{
+    fun getCategories(instance:CategoryDto):Observable<CategoriesResponse>{
         val api = retrofit.create(UserApi::class.java)
-        return api.getCategories(string)
+        return api.getCategories(instance)
     }
+
+    fun getCategoryItems(instance:CategoryDto):Observable<List<ChildItem>>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.getCategoryItems(instance)
+    }
+
 }
