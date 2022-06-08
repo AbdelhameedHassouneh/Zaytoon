@@ -39,8 +39,6 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.streetFoodLay.catImageView.setImageResource(R.drawable.street_foods)
         binding.streetFoodLay.root.setOnClickListener{
             viewModel.setZaytoonCat("street_food")
-            viewModel.getCategories("street_food")
-
             parentFragmentManager.commit {
                 add<ExpandableFragment>(R.id.fragment_container)
                 addToBackStack(null)
@@ -50,7 +48,6 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.foodTrucksLay.titleTextView.text = "Food Trucks"
         binding.foodTrucksLay.catImageView.setImageResource(R.drawable.food_trucks)
         binding.foodTrucksLay.root.setOnClickListener{
-            viewModel.getCategories("food_trucks")
 
             parentFragmentManager.commit {
                 add<ExpandableFragment>(R.id.fragment_container)
@@ -61,7 +58,6 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.restaurantsLay.titleTextView.text = "Restaurants"
         binding.restaurantsLay.catImageView.setImageResource(R.drawable.resturants)
         binding.restaurantsLay.root.setOnClickListener{
-            viewModel.getCategories("restaurants")
             parentFragmentManager.commit {
                 add<ExpandableFragment>(R.id.fragment_container)
                 addToBackStack(null)
@@ -71,7 +67,6 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.bakeriesLay.titleTextView.text = "Bakeries"
         binding.bakeriesLay.catImageView.setImageResource(R.drawable.bakeries)
         binding.bakeriesLay.root.setOnClickListener{
-            viewModel.getCategories("bakeries")
             parentFragmentManager.commit {
                 add<ExpandableFragment>(R.id.fragment_container)
                 addToBackStack(null)
@@ -81,7 +76,6 @@ class LookFroCalorieAndNutFragment : Fragment(R.layout.fragment_look_fro_calorie
         binding.sweetShopsLay.titleTextView.text = "Sweet shops"
         binding.sweetShopsLay.catImageView.setImageResource(R.drawable.sweets)
         binding.sweetShopsLay.root.setOnClickListener{
-            viewModel.getCategories("sweet_shops")
             parentFragmentManager.commit {
                 add<ExpandableFragment>(R.id.fragment_container)
                 addToBackStack(null)

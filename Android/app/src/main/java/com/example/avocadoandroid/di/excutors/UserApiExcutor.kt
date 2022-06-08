@@ -50,4 +50,9 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
         return api.getCategoryItems(instance)
     }
 
+    fun getCategoriesItemsAggregated(instance:CategoryDto):Observable<List<Expandable>>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.getCategoriesItemsAggregated(instance)
+    }
+
 }

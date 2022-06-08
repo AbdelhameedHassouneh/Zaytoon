@@ -34,4 +34,8 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
     fun getCategoryItems(dto:CategoryDto):io.reactivex.rxjava3.core.Observable<List<ChildItem>>{
         return excutor.getCategoryItems(dto)
     }
+
+    fun getCategoriesItemsAggregated(instance:CategoryDto): io.reactivex.rxjava3.core.Observable<List<Expandable>> {
+        return excutor.getCategoriesItemsAggregated(instance)
+    }
 }
