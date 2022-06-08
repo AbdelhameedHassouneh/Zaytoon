@@ -25,4 +25,7 @@ interface UserApi {
 
     @POST("categories_items")
     fun getCategoryItems(@Body dto:CategoryDto ):Observable<List<ChildItem>>
+
+    @POST("categories_items_aggregated")
+    fun getCategoriesItemsAggregated(@Body dto: CategoryDto):Observable<List<Expandable>>
 }
