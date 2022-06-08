@@ -8,6 +8,7 @@ import com.example.avocadoandroid.SingleLiveEvent
 import com.example.avocadoandroid.di.managers.UserManager
 import com.example.avocadoandroid.entities.*
 import com.example.avocadoandroid.recycler_expandable.ChildItem
+import com.example.avocadoandroid.recycler_expandable.ParentItem
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
@@ -31,8 +32,8 @@ class UserSharedViewModel : ViewModel() {
     private val _zaytoonCat = MutableLiveData<String>()
     val zaytoonCat: LiveData<String> get() = _zaytoonCat
 
-    private val _aggregatedItems = MutableLiveData<List<Expandable>>()
-    val aggregatedItems :LiveData<List<Expandable>> get() = _aggregatedItems
+    private val _aggregatedItems = MutableLiveData<List<ParentItem>>()
+    val aggregatedItems :LiveData<List<ParentItem>> get() = _aggregatedItems
 
 
     fun setUser(user: User) {
@@ -104,16 +105,16 @@ class UserSharedViewModel : ViewModel() {
     }
 
     fun getCategoriesAggregated(dto:CategoryDto){
-        val observable: Observable<List<Expandable>> =
+        val observable: Observable<List<ParentItem>> =
             userManager.getCategoriesItemsAggregated(dto).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
-        val observer: Observer<List<Expandable>> = object : Observer<List<Expandable>> {
+        val observer: Observer<List<ParentItem>> = object : Observer<List<ParentItem>> {
             override fun onSubscribe(d: Disposable) {
                 Log.d(TAG, "onSubscribe: ")
             }
 
-            override fun onNext(t: List<Expandable>) {
+            override fun onNext(t: List<ParentItem>) {
                 Log.d(TAG, "onNext in the sign up: $t")
                 _aggregatedItems.postValue(t)
             }

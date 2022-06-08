@@ -4,6 +4,7 @@ import android.database.Observable
 import com.example.avocadoandroid.di.excutors.UserApiExcutor
 import com.example.avocadoandroid.entities.*
 import com.example.avocadoandroid.recycler_expandable.ChildItem
+import com.example.avocadoandroid.recycler_expandable.ParentItem
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
@@ -35,7 +36,7 @@ class UserManager @Inject constructor(val excutor: UserApiExcutor) {
         return excutor.getCategoryItems(dto)
     }
 
-    fun getCategoriesItemsAggregated(instance:CategoryDto): io.reactivex.rxjava3.core.Observable<List<Expandable>> {
+    fun getCategoriesItemsAggregated(instance:CategoryDto): io.reactivex.rxjava3.core.Observable<List<ParentItem>> {
         return excutor.getCategoriesItemsAggregated(instance)
     }
 }
