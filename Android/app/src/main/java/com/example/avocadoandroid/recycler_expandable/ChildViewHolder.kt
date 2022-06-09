@@ -2,12 +2,15 @@ package com.example.avocadoandroid.recycler_expandable
 
 import android.annotation.SuppressLint
 import androidx.annotation.DrawableRes
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.example.avocadoandroid.databinding.ChildListItemBinding
+import com.example.avocadoandroid.utils.CategoryItem
 
 class ChildViewHolder(
     private val binding: ChildListItemBinding,
     onChildClicked: (String) -> Unit
+
 ) : RecyclerView.ViewHolder(binding.root) {
 
     init {
@@ -17,7 +20,7 @@ class ChildViewHolder(
     }
 
     @SuppressLint("ResourceType")
-    fun bind(item: ChildItem) {
+    fun bind(item: CategoryItem) {
         binding.foodItemText.text = item.foodItem
         binding.subtitle.text = item.subTitle
         binding.sideNotes.text = item.sideNotes

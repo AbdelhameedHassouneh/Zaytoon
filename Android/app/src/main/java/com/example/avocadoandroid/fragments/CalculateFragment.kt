@@ -56,7 +56,7 @@ class CalculateFragment : Fragment(R.layout.fragment_calculate) {
         }
         viewModel.caloricNeeds.observe(viewLifecycleOwner){
             val builder: AlertDialog.Builder =  AlertDialog.Builder(requireContext());
-            builder.setMessage("Your caloric Needs:${it}")
+            builder.setMessage("Your caloric Needs:${String.format("%.2f",it)}")
                 .setCancelable(true)
                 .setNeutralButton(
                     "Close",
@@ -64,11 +64,9 @@ class CalculateFragment : Fragment(R.layout.fragment_calculate) {
                         dialog.cancel()
 
                     })
-            //Creating dialog box
-            //Creating dialog box
+
             val alert: AlertDialog = builder.create()
-            //Setting the title manually
-            //Setting the title manually
+
             alert.setTitle("Calorie Intake")
             alert.show()
 

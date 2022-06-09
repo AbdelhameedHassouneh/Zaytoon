@@ -7,22 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.avocadoandroid.R
 import com.example.avocadoandroid.databinding.FragmentExpandableBinding
 import com.example.avocadoandroid.entities.CategoryDto
 import com.example.avocadoandroid.models.UserSharedViewModel
-import com.example.avocadoandroid.recycler_expandable.ChildItem
 import com.example.avocadoandroid.recycler_expandable.GridListAdapter
+import com.example.avocadoandroid.utils.CategoryItem
 
 
 class ExpandableFragment : Fragment(R.layout.fragment_expandable) {
     private lateinit var viewModel: UserSharedViewModel
     private lateinit var binding: FragmentExpandableBinding
+    private lateinit var recyclerView: RecyclerView
 
-
-
-    private val adapter = GridListAdapter(onItemClicked = ::onChildItemClicked)
+    private val adapter = GridListAdapter(::onChildItemClicked)
 
 
     private lateinit var zaytoonCat: String
@@ -47,21 +51,34 @@ class ExpandableFragment : Fragment(R.layout.fragment_expandable) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.drinksLay.recyclerView.adapter = adapter
+        recyclerView = binding.recyclerView
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.adapter = adapter
         viewModel.zaytoonCat.observe(viewLifecycleOwner) {
             zaytoonCat = it
             Log.d(TAG, "onViewCreated: $zaytoonCat")
             viewModel.getCategoriesAggregated(CategoryDto(zaytoonCat))
         }
-        viewModel.aggregatedItems.observe(viewLifecycleOwner){
+        viewModel.aggregatedItems.observe(viewLifecycleOwner) {
+            val listOfCategoryItem = mutableListOf<CategoryItem>()
+
             Log.d(TAG, "onViewCreated: $it")
+            if (it != null) {
+                for (item in it.data) {
+                    val cats = item.category_items
+                    listOfCategoryItem.addAll(cats)
+                }
+                adapter.submitList(listOfCategoryItem)
+            }
         }
-
-
     }
 
-    fun onChildItemClicked(s: String) {
+    fun onChildItemClicked(string:String) {
 
+        viewModel.setFinalItem(string)
+        parentFragmentManager.commit {
+            replace<FinalFragment>(R.id.fragment_container)
+        }
     }
 
     companion object {
