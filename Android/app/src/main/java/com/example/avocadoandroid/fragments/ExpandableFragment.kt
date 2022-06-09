@@ -5,37 +5,31 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.avocadoandroid.R
-import com.example.avocadoandroid.databinding.FragmentEditBinding
 import com.example.avocadoandroid.databinding.FragmentExpandableBinding
 import com.example.avocadoandroid.entities.CategoryDto
 import com.example.avocadoandroid.models.UserSharedViewModel
-import com.example.avocadoandroid.recycler_expandable.ChildItem
 import com.example.avocadoandroid.recycler_expandable.GridListAdapter
-import kotlin.math.log
+import com.example.avocadoandroid.utils.CategoryItem
 
 
 class ExpandableFragment : Fragment(R.layout.fragment_expandable) {
     private lateinit var viewModel: UserSharedViewModel
     private lateinit var binding: FragmentExpandableBinding
-    private lateinit var drinks:List<ChildItem>
-    private lateinit var sandwichs:List<ChildItem>
-    private lateinit var bakeries:List<ChildItem>
-    private lateinit var sweets:List<ChildItem>
-    private lateinit var streetSnacks:List<ChildItem>
-    private lateinit var toppings:List<ChildItem>
-    private lateinit var deals:List<ChildItem>
+    private lateinit var recyclerView: RecyclerView
+
+    private val adapter = GridListAdapter(::onChildItemClicked)
 
 
-    private val adapter = GridListAdapter(onItemClicked = ::onChildItemClicked)
-
-
-    private lateinit var zaytoonCat:String
-    private lateinit var cateegories:List<String>
+    private lateinit var zaytoonCat: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,56 +51,37 @@ class ExpandableFragment : Fragment(R.layout.fragment_expandable) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.drinksLay.recyclerView.adapter = adapter
-        viewModel.zaytoonCat.observe(viewLifecycleOwner){
+        recyclerView = binding.recyclerView
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.adapter = adapter
+        viewModel.zaytoonCat.observe(viewLifecycleOwner) {
             zaytoonCat = it
             Log.d(TAG, "onViewCreated: $zaytoonCat")
-
+            viewModel.getCategoriesAggregated(CategoryDto(zaytoonCat))
         }
-        viewModel.categoriesLiveData.observe(viewLifecycleOwner){
-            cateegories = it
-            Log.d(TAG, "onViewCreated: $cateegories")
-            for (item in cateegories){
-                viewModel.getCategoryItems(CategoryDto(zaytoonCat,item))
-                if(item == "Drinks"){
-                    binding.drinksLay.root.visibility = View.VISIBLE
+        viewModel.aggregatedItems.observe(viewLifecycleOwner) {
+            val listOfCategoryItem = mutableListOf<CategoryItem>()
+
+            Log.d(TAG, "onViewCreated: $it")
+            if (it != null) {
+                for (item in it.data) {
+                    val cats = item.category_items
+                    listOfCategoryItem.addAll(cats)
                 }
+                adapter.submitList(listOfCategoryItem)
             }
         }
-        
-        with(viewModel){
-            drinksLiveData.observe(viewLifecycleOwner){
-                Log.d(TAG, "Tbe drinks $it")
-                drinks = it
-                adapter.submitList(drinks)
-            }
-            sandwichesLiveData.observe(viewLifecycleOwner){
-                sandwichs = it
-            }
-            bakeriesLiveData.observe(viewLifecycleOwner){
-                bakeries = it
-            }
-            sweetLiveData.observe(viewLifecycleOwner){
-                sweets = it
-            }
-            streetSnacksLiveData.observe(viewLifecycleOwner){
-                streetSnacks = it
-            }
-            
-            toppingsLiveData.observe(viewLifecycleOwner){
-                toppings = it
-            }
-            dealsLiveData.observe(viewLifecycleOwner){
-                deals =it
-            }
+    }
+
+    fun onChildItemClicked(string:String) {
+
+        viewModel.setFinalItem(string)
+        parentFragmentManager.commit {
+            replace<FinalFragment>(R.id.fragment_container)
         }
-
-    }
-    fun onChildItemClicked(s:String){
-
     }
 
-    companion object{
+    companion object {
         private const val TAG = "ExpandableFragment"
     }
 }

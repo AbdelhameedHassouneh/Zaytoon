@@ -8,6 +8,9 @@ import com.example.avocadoandroid.SingleLiveEvent
 import com.example.avocadoandroid.di.managers.UserManager
 import com.example.avocadoandroid.entities.*
 import com.example.avocadoandroid.recycler_expandable.ChildItem
+import com.example.avocadoandroid.recycler_expandable.ParentItem
+import com.example.avocadoandroid.utils.Da
+import com.example.avocadoandroid.utils.FinalItem
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
@@ -17,7 +20,7 @@ import javax.inject.Inject
 
 class UserSharedViewModel : ViewModel() {
     @Inject
-    lateinit var userManager:UserManager
+    lateinit var userManager: UserManager
 
     private val _userLiveData = MutableLiveData<User>()
     val userLiveData: LiveData<User> get() = _userLiveData
@@ -26,59 +29,40 @@ class UserSharedViewModel : ViewModel() {
     val userToEditLiveData: LiveData<User> get() = _userToEditLiveData
 
     private val _caloricNeeds = SingleLiveEvent<Double>()
-    val caloricNeeds :LiveData<Double> get() = _caloricNeeds
+    val caloricNeeds: LiveData<Double> get() = _caloricNeeds
 
-    val _zaytoonCat = MutableLiveData<String>()
-    val zaytoonCat:LiveData<String> get() = _zaytoonCat
+    private val _zaytoonCat = MutableLiveData<String>()
+    val zaytoonCat: LiveData<String> get() = _zaytoonCat
 
+    private val _aggregatedItems = MutableLiveData<Da>()
+    val aggregatedItems :LiveData<Da> get() = _aggregatedItems
 
-    private val _categoriesLiveData = MutableLiveData<List<String>>()
-    val categoriesLiveData:LiveData<List<String>> get() = _categoriesLiveData
+    private val _finalItemLiveData = MutableLiveData<String>()
+    val finalItemLiveData:LiveData<String> get() = _finalItemLiveData
 
-    private val _drinksLiveData = MutableLiveData<List<ChildItem>>()
-    val drinksLiveData:LiveData<List<ChildItem>> get() = _drinksLiveData
-
-    private val _sandwichesLiveData = MutableLiveData<List<ChildItem>>()
-    val sandwichesLiveData:LiveData<List<ChildItem>> get() = _sandwichesLiveData
-
-    private val _bakeriesLiveData = MutableLiveData<List<ChildItem>>()
-    val bakeriesLiveData:LiveData<List<ChildItem>> get() = _bakeriesLiveData
-
-
-    private val _sweetsLiveData = MutableLiveData<List<ChildItem>>()
-    val sweetLiveData:LiveData<List<ChildItem>> get() = _sweetsLiveData
-
-    private val _streetSnacksLiveData = MutableLiveData<List<ChildItem>>()
-    val streetSnacksLiveData:LiveData<List<ChildItem>> get() = _streetSnacksLiveData
-
-    private val _dealsLiveData = MutableLiveData<List<ChildItem>>()
-    val dealsLiveData:LiveData<List<ChildItem>> get() = _dealsLiveData
-
-
-    private val _toppingsLiveData = MutableLiveData<List<ChildItem>>()
-    val toppingsLiveData:LiveData<List<ChildItem>> get() = _toppingsLiveData
-
-
-
-
-
-
-
+    private val _finalFinalLiveData = MutableLiveData<FinalItem>()
+    val finalFinalLiveData:LiveData<FinalItem> get() = _finalFinalLiveData
 
     fun setUser(user: User) {
         _userLiveData.postValue(user)
     }
-    fun setUserToEdit(user:User){
+
+    fun setUserToEdit(user: User) {
         _userToEditLiveData.postValue(user)
     }
 
-    fun setZaytoonCat(str:String){
+    fun setZaytoonCat(str: String) {
         _zaytoonCat.postValue(str)
     }
 
-    fun editProfile(userToEdit:User){
-        val observable: Observable<User> = userManager.editProfile(userToEdit).subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+    fun setFinalItem(str:String){
+        _finalItemLiveData.postValue(str)
+    }
+
+    fun editProfile(userToEdit: User) {
+        val observable: Observable<User> =
+            userManager.editProfile(userToEdit).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
 
         val observer: Observer<User> = object : Observer<User> {
             override fun onSubscribe(d: Disposable) {
@@ -100,7 +84,8 @@ class UserSharedViewModel : ViewModel() {
         }
         observable.subscribe(observer)
     }
-    companion object{
+
+    companion object {
         private const val TAG = "UserSharedViewModel"
     }
 
@@ -130,20 +115,19 @@ class UserSharedViewModel : ViewModel() {
         observable.subscribe(observer)
     }
 
+    fun getCategoriesAggregated(dto:CategoryDto){
+        val observable: Observable<Da> =
+            userManager.getCategoriesItemsAggregated(dto).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
 
-    fun getCategories(zaytoonCat:String){
-        val observable:Observable<CategoriesResponse> = userManager.getCategories(CategoryDto( zaytoonCat))
-            .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-
-        val observer: Observer<CategoriesResponse> = object : Observer<CategoriesResponse> {
+        val observer: Observer<Da> = object : Observer<Da> {
             override fun onSubscribe(d: Disposable) {
                 Log.d(TAG, "onSubscribe: ")
             }
 
-            override fun onNext(t: CategoriesResponse) {
-                Log.d(TAG, "onNext in the sign up: ${t.categories}")
-//                _caloricNeeds.postValue(t.caloricNeeds)
-                _categoriesLiveData.postValue(t.categories)
+            override fun onNext(t: Da) {
+                Log.d(TAG, "onNext in the sign up: $t")
+                _aggregatedItems.postValue(t)
             }
 
             override fun onError(e: Throwable) {
@@ -156,27 +140,19 @@ class UserSharedViewModel : ViewModel() {
         observable.subscribe(observer)
     }
 
-    fun getCategoryItems(dto:CategoryDto){
-        val observable:Observable<List<ChildItem>> = userManager.getCategoryItems(dto)
-            .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+    fun getLastItem(dto:FinalDto){
+        val observable: Observable<FinalItem> =
+            userManager.getFinalItem(dto).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
 
-        val observer: Observer<List<ChildItem>> = object : Observer<List<ChildItem>> {
+        val observer: Observer<FinalItem> = object : Observer<FinalItem> {
             override fun onSubscribe(d: Disposable) {
                 Log.d(TAG, "onSubscribe: ")
             }
-            override fun onNext(t: List<ChildItem>) {
-                if(dto.categoryName == "Drinks"){
-                    _drinksLiveData.postValue(t)
-                    Log.d(TAG, "onNext: MFFFFF")
-                }else if (dto.categoryName == "Street snacks"){
-                    _streetSnacksLiveData.postValue(t)
-                }else if(dto.categoryName == "Sandwiches"){
-                    _sandwichesLiveData.postValue(t)
-                }else if(dto.categoryName == "Bakeries"){
-                    _bakeriesLiveData.postValue(t)
-                }else if(dto.categoryName == "Sweets"){
-                    _sweetsLiveData.postValue(t)
-                }
+
+            override fun onNext(t: FinalItem) {
+                Log.d(TAG, "onNext in the sign up: $t")
+                _finalFinalLiveData.postValue(t)
             }
 
             override fun onError(e: Throwable) {
@@ -187,8 +163,5 @@ class UserSharedViewModel : ViewModel() {
             }
         }
         observable.subscribe(observer)
-
-
     }
-
 }

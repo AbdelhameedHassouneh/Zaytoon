@@ -1,21 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.KnowMoreFragment">
+        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            tools:context=".fragments.KnowMoreFragment">
 
-    </FrameLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Corn food carts"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                        app:layout_constraintStart_toStartOf="@+id/imageView5"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView5"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Corn food carts serves loose, boiled corn kernels in a cup, to be consumed with a spoon after its mixed with cheese powder, plant-based butter, spices and salt. Adding lemon and mayonnaise is suggested after serving.(Corn is a whole grain that is rich in vitamin C and magnesium and low in fat), adding extra toppings like butter and mayonnaise on the corn cup increases it’s calories and fats. "
+                        app:layout_constraintEnd_toEndOf="@+id/textView9"
+                        app:layout_constraintStart_toStartOf="@+id/textView9"
+                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView55"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView99"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Coffee booths “Good day starts with coffee”"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView55"
+                        app:layout_constraintStart_toStartOf="@+id/imageView55"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView55"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Coffee booths sell diverse drinks such as espresso, cappuccino, latte, iced coffee, and more.\n(Coffee without sugar is zero calories), Recommendations for coffee intake is maximum 2-3 cups per day."
+                        app:layout_constraintEnd_toEndOf="@+id/textView99"
+                        app:layout_constraintStart_toStartOf="@+id/textView99"
+                        app:layout_constraintTop_toBottomOf="@+id/textView99" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView556"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView999"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Cotton Candy (Sha’ar Banat)"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView556"
+                        app:layout_constraintStart_toStartOf="@+id/imageView556"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView556"></TextView>
+
+                    <TextView
+                        android:id="@+id/textView612"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Cotton Candy is made up of pure sugar and some coloring and flavoring (cotton candy is 100% sugar), one serving contains 80 Calories and 20 g sugar."
+                        app:layout_constraintEnd_toEndOf="@+id/textView999"
+                        app:layout_constraintStart_toStartOf="@+id/textView999"
+                        app:layout_constraintTop_toBottomOf="@+id/textView999" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/i1"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Falafel"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/i1"
+                        app:layout_constraintStart_toStartOf="@+id/i1"
+                        app:layout_constraintTop_toBottomOf="@+id/i1"></TextView>
+
+                    <TextView
+                        android:id="@+id/t11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Falafel is a popular Middle Eastern food that is made up from ground chickpeas, onions, parsley and spices. Falafel sandwich is a warm pita bread stuffed with crispy hot falafel balls, surrounded by cool and diced tomatoes, cucumbers, onions and others, and dressed with tahini sauce.\n
+(Falafel is high in vitamins and minerals and a good source of fiber and protein).Yet, it's typically deep-fried in oil, which raises its fat and calorie content."
+                        app:layout_constraintEnd_toEndOf="@+id/t1"
+                        app:layout_constraintStart_toStartOf="@+id/t1"
+                        app:layout_constraintTop_toBottomOf="@+id/t1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/i2"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Fresh Juices and smoothies"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/i2"
+                        app:layout_constraintStart_toStartOf="@+id/i2"
+                        app:layout_constraintTop_toBottomOf="@+id/i2"></TextView>
+
+                    <TextView
+                        android:id="@+id/t22"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="If you want to nourish your body, orange, pomegranate, sugarcane, beetroot, many other juices and smoothies with variety of delicious toppings added is what you want.\n(Juices and smoothies are healthy snacks) Adding honey and nuts makes it high in energy snack and can be an option to increase energy for work, or after the gym snack."
+                        app:layout_constraintEnd_toEndOf="@+id/t2"
+                        app:layout_constraintStart_toStartOf="@+id/t2"
+                        app:layout_constraintTop_toBottomOf="@+id/t2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/i3"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Shawarma"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/i3"
+                        app:layout_constraintStart_toStartOf="@+id/i3"
+                        app:layout_constraintTop_toBottomOf="@+id/i3"></TextView>
+
+                    <TextView
+                        android:id="@+id/t33"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Shawarma might be an easy to grab on the go. Shawarma is thinly sliced cuts of meat, like chicken, beef and sometimes turkey rolled into a large piece of flatbread or pita. Inside the pita, foods like hummus, tahini, pickles, vegetables, and even french fries are added.(Shawarma strips contain a lot of fat since they are marinated in oils) adding more sauces increases its fat content."
+                        app:layout_constraintEnd_toEndOf="@+id/t3"
+                        app:layout_constraintStart_toStartOf="@+id/t3"
+                        app:layout_constraintTop_toBottomOf="@+id/t3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3D3D3"
+                app:cardCornerRadius="5dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/i4"
+                        android:layout_width="320dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/logoo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/t4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="The Hot dog Van"
+                        android:textSize="31sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/i4"
+                        app:layout_constraintStart_toStartOf="@+id/i4"
+                        app:layout_constraintTop_toBottomOf="@+id/i4"></TextView>
+
+                    <TextView
+                        android:id="@+id/t44"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Hot dogs are high in bad fat, sodium and cholesterol. (Just one hot dog can contain over a quarter of your day's sodium allowance and over 14 grams of fat)."
+                        app:layout_constraintEnd_toEndOf="@+id/t4"
+                        app:layout_constraintStart_toStartOf="@+id/t4"
+                        app:layout_constraintTop_toBottomOf="@+id/t4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

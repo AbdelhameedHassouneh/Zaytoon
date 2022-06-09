@@ -3,6 +3,9 @@ package com.example.avocadoandroid.di.excutors
 import com.example.avocadoandroid.di.apis.UserApi
 import com.example.avocadoandroid.entities.*
 import com.example.avocadoandroid.recycler_expandable.ChildItem
+import com.example.avocadoandroid.recycler_expandable.ParentItem
+import com.example.avocadoandroid.utils.Da
+import com.example.avocadoandroid.utils.FinalItem
 import com.google.gson.GsonBuilder
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
@@ -48,6 +51,16 @@ class UserApiExcutor @Inject constructor(val okHttpClient: OkHttpClient){
     fun getCategoryItems(instance:CategoryDto):Observable<List<ChildItem>>{
         val api = retrofit.create(UserApi::class.java)
         return api.getCategoryItems(instance)
+    }
+
+    fun getCategoriesItemsAggregated(instance:CategoryDto):Observable<Da>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.getCategoriesItemsAggregated(instance)
+    }
+
+    fun getFinalItem(finalDto: FinalDto):Observable<FinalItem>{
+        val api = retrofit.create(UserApi::class.java)
+        return api.getFinalItem(finalDto)
     }
 
 }

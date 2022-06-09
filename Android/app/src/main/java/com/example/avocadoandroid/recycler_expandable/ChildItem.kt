@@ -1,3 +1,9 @@
 package com.example.avocadoandroid.recycler_expandable
 
-data class ChildItem (val pictureName:String,val sideNotes:String,val subTitle:String,val foodItem:String)
+import com.google.gson.annotations.SerializedName
+
+data class ChildItem (@SerializedName("pictureName")val pictureName:String,
+                      @SerializedName("SideNotes") val sideNotes:String,
+                      @SerializedName("subTitle")val subTitle:String,
+                      @SerializedName("foodItem") val foodItem:String,
+                        @SerializedName("foodSection")val foodSections:String)
