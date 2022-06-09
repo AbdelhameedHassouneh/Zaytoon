@@ -1,15 +1,15 @@
-Drinks,Espresso,,,, ,0,0,0,0,Espresso
-Drinks,Arabic coffee,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Arabian Coffee
-Drinks,Tea,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Tea
-Drinks,Americano,,250 ml,,  ,0,0,0,0,Americano
-Drinks,Nescafe,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Nescafe  
-Drinks,Nescafe,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,7,8,11.5,152,Nescafe with milk 
-Drinks,Hot chocholate,,250 ml,,,8.5,9,19.5,192,Hot chocholate 
-Drinks,French vanilla,,250 ml,,,10.5,8,20.5,212,French Vanilla 
+Drinks,espresso,,,, ,0,0,0,0,Espresso
+Drinks,arabic_coffee,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Arabian Coffee
+Drinks,tea,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Tea
+Drinks,americano,,250 ml,,  ,0,0,0,0,Americano
+Drinks,nescafe,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Nescafe
+Drinks,nescafe,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,7,8,11.5,152,Nescafe with milk
+Drinks,hot_chocholate,,250 ml,,,8.5,9,19.5,192,Hot chocolate
+Drinks,french_vanilla,,250 ml,,,10.5,8,20.5,212,French Vanilla
 Drinks,ice ,,250 ml,,,0,0,19.6,82.5,Ice Tea
-Drinks,iced coffee,,250 ml,,,2.1,1.4,25,125,Iced Coffee
-Drinks,Herbs,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Herbs 
-Drinks,Orange,,165 ml,S ,,0.2,1,19,81,Orange Juice
+Drinks,iced_coffee,,250 ml,,,2.1,1.4,25,125,Iced Coffee
+Drinks,herbs,,250 ml,,  + 1 Teaspoon of sugar = 16 Calories,0,0,0,0,Herbs
+Drinks,orange,,165 ml,S ,,0.2,1,19,81,Orange Juice
 Drinks,orange ,,250 ml,M,,0.3,1.7,29,123,Orange Juice 
 Drinks,orange,,330 ml,L,,0.4,2.2,38,162,Orange Juice 
 Drinks,carrot,,165 ml,S,,0.2,1.6,15,66,Carrot Juice
@@ -18,12 +18,12 @@ Drinks,carrot,,330 ml,L,,0.5,3,31,132,Carrot Juice
 Drinks,pomegranate,,165 ml,S,,0.5,0.2,22,89,Pomegranate Juice 
 Drinks,pomegranate,,250 ml,M,,0.7,0.4,33,135,Pomegranate Juice 
 Drinks,pomegranate,,330 ml,L,,1,0.5,43,178,Pomegranate Juice 
-Drinks,Strawberries,,165 ml,S,,0.9,0.5,12.5,60,Strawberry Juice 
-Drinks,Strawberries,,250 ml,M,,1.44,0.72,19,91.2,Strawberyy Juice
-Drinks,Strawberries,,330 ml,L,,2,1,25,120,Strawberry Juice 
-Drinks,BT,,165 ml,S,,1.77,0.2,15.56,69,Beetroot and Carrot 
-Drinks,BT,,250 ml,M,,2.69,0.9,23.4,105,Beetroot and Carrot 
-Drinks,BT,,330 ml,L,,3.5,0.25,31.15,139,Beetroot and Carrot 
+Drinks,strawberries,,165 ml,S,,0.9,0.5,12.5,60,Strawberry Juice
+Drinks,strawberries,,250 ml,M,,1.44,0.72,19,91.2,Strawberyy Juice
+Drinks,strawberries,,330 ml,L,,2,1,25,120,Strawberry Juice
+Drinks,bt,,165 ml,S,,1.77,0.2,15.56,69,Beetroot and Carrot
+Drinks,bt,,250 ml,M,,2.69,0.9,23.4,105,Beetroot and Carrot
+Drinks,bt,,330 ml,L,,3.5,0.25,31.15,139,Beetroot and Carrot
 Drinks,lem,,165 ml,S,,0.1,0.15,15.4,50,Lemon with Mint
 Drinks,lem,,250 ml,M,,0.15,0.2,23,75,Lemon with Mint
 Drinks,lem,,330 ml,L,,0.3,0.4,46,150,Lemon with Mint
@@ -32,20 +32,20 @@ Drinks,slu,,330 ml,L,,0.08,0.12,41.5,160,Lemon slush
 Drinks,date,,165 ml,S,,0,0,31,130,Date slush
 Drinks,date,,330 ml,L,,0,0,62,260,Date slush
 Street snacks,sunflower ,,60 g,,,13,6,5,160,Sunflower Seed
-Street snacks,Peanuts,,40 g,,,20,10.5,6,228,Peanuts
+Street snacks,peanuts,,40 g,,,20,10.5,6,228,Peanuts
 Street snacks,corn,,120 g,, ,1.6,3,18,85,Corn
-Street snacks,corn cup,,150 g,S, + 1 Teaspoon of butter or mayonnaise = 45 Calories,3,4,28,138,Corn Cup
-Street snacks,corn cup,,300 g,L,  + 1 Teaspoon of butter or mayonnaise = 45 Calories,6,8,57,276,Corn Cup
-Street snacks,Falafel,,1 large falafel,,,1.4,4.9,15,90,Falafel
-Street snacks,Kubbeh,,1 piece,,,11,19.4,30.2,285.6,Kubbeh 
-Street snacks,Lupine,,100 g,,,3,15.6,10,119,Lupine
-Street snacks,Fava Beans,,100 g,,,0.7,7.9,17.6,88,Fava Beans 
-Sandwiches,shawarma chicken ,(Shrak bread، 225 g of Chicken، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Chicken Shawarma
-Sandwiches,shawarma beef,(Shrak bread، 225 g of Beef، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Beef Shawarma
-Sandwiches,Flafel sandwich ,(Pita bread،2 large Flafel، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of hummus =  27 calories,1.7,12.7,48,274.5,Flafel Sandwich
-Sandwiches,Shan,( Baguette bread، Labaneh، Makdoos، Salad),,S, ,15.2,13.2,48.5,390,Shankleesh  
-Sandwiches,Shan,( Baguette bread، Labaneh، Makdoos، Salad),,L, ,17.5,17,62,477,Shankleesh  
-Bakeries,Manw,,,,,23,33,107,822,Manqoushe White Cheese
-Bakeries,ManZ,,,,,45.3,11,101,887,Manqoushe Zaatar 
-Sweets,Knafeh,,200 g,,,26,23,61,600,Knafeh
-Sweets,cotton candy,,,,,0,0,20,80,Cotton Candy
+Street snacks,corn_cup,,150 g,S, + 1 Teaspoon of butter or mayonnaise = 45 Calories,3,4,28,138,Corn Cup
+Street snacks,corn_cup,,300 g,L,  + 1 Teaspoon of butter or mayonnaise = 45 Calories,6,8,57,276,Corn Cup
+Street snacks,falafel,,1 large falafel,,,1.4,4.9,15,90,Falafel
+Street snacks,kubbeh,,1 piece,,,11,19.4,30.2,285.6,Kubbeh
+Street snacks,lupine,,100 g,,,3,15.6,10,119,Lupine
+Street snacks,fava_beans,,100 g,,,0.7,7.9,17.6,88,Fava Beans
+Sandwiches,shawarma_chicken ,(Shrak bread، 225 g of Chicken، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Chicken Shawarma
+Sandwiches,shawarma_beef,(Shrak bread، 225 g of Beef، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of garlic sauce = 30 calories \ + 1 Tabelspoon of hummus =  27 calories,41.8,63.1,57.5,868.5,Beef Shawarma
+Sandwiches,flafel_sandwich ,(Pita bread،2 large Flafel، Salad),,, + 1 Tabelspoon of Tahini = 90 calories \ + 1 Tabelspoon of hummus =  27 calories,1.7,12.7,48,274.5,Flafel Sandwich
+Sandwiches,shan,( Baguette bread، Labaneh، Makdoos، Salad),,S, ,15.2,13.2,48.5,390,Shankleesh
+Sandwiches,shan,( Baguette bread، Labaneh، Makdoos، Salad),,L, ,17.5,17,62,477,Shankleesh
+Bakeries,manw,,,,,23,33,107,822,Manqoushe White Cheese
+Bakeries,manz,,,,,45.3,11,101,887,Manqoushe Zaatar
+Sweets,knafeh,,200 g,,,26,23,61,600,Knafeh
+Sweets,cotton_candy,,,,,0,0,20,80,Cotton Candy
